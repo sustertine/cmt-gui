@@ -1,0 +1,6 @@
+<p>group-view works!</p>
+<ng-container *ngIf="getUrl() | async as urlSegments">
+    <ng-container *ngFor="let urlSegment of urlSegments">
+        <h1> {{ urlSegment }}</h1>
+    </ng-container>
+</ng-container>

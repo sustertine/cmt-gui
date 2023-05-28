@@ -4,12 +4,13 @@ import { CommonModule } from '@angular/common';
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { DashboardViewComponent } from './views/dashboard-view.component';
 import { PeriodModule } from '../period';
+import { GroupModule } from '../group';
 
 const COMPONENTS = [DashboardViewComponent];
 
 @NgModule({
   declarations: [...COMPONENTS],
   exports: [...COMPONENTS],
-  imports: [CommonModule, DashboardRoutingModule, PeriodModule],
+  imports: [CommonModule, DashboardRoutingModule, PeriodModule, GroupModule],
 })
 export class DashboardModule {}

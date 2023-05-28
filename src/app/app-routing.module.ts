@@ -14,6 +14,11 @@ const routes: Routes = [
       import('./dashboard/dashboard.module').then((m) => m.DashboardModule),
   },
   {
+    path: 'group',
+    loadChildren: () =>
+      import('./group/group.module').then((m) => m.GroupModule),
+  },
+  {
     path: 'period',
     loadChildren: () =>
       import('./period/period.module').then((m) => m.PeriodModule),
