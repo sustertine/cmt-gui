@@ -40,3 +40,7 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
+/.editorconfig
+/.vscode/extensions.json
+/.vscode/launch.json
+/.vscode/tasks.json
