@@ -1,0 +1,38 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+        <button (click)="sidenav.toggle()" mat-icon-button>
+            <mat-icon>menu</mat-icon>
+        </button>
+        <span style="margin-left: 0.5rem">CMT</span>
+    </mat-toolbar-row>
+</mat-toolbar>
+<mat-sidenav-container style="height: inherit">
+    <mat-sidenav #sidenav mode="side" opened="true">
+        <mat-nav-list>
+            <a mat-list-item href="dashboard">
+                <div style="padding-left: 0.5rem; padding-right: 3rem; display: flex; align-items: center">
+                    <mat-icon>home</mat-icon>
+                    <span style="margin-left: 0.5rem">Domov</span>
+                </div>
+            </a>
+            <a mat-list-item href="period">
+                <div style="padding-left: 0.5rem; padding-right: 3rem; display: flex; align-items: center">
+                    <mat-icon>calendar_today</mat-icon>
+                    <span style="margin-left: 0.5rem">Termini</span>
+                </div>
+            </a>
+            <a mat-list-item>
+                <div style="padding-left: 0.5rem; padding-right: 3rem; display: flex; align-items: center">
+                    <mat-icon>bar_chart</mat-icon>
+                    <span style="margin-left: 0.5rem">Statistika</span>
+                </div>
+            </a>
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <div style="padding: 20px; padding-bottom: 100px">
+            <ng-content></ng-content>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>
+
