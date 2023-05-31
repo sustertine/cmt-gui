@@ -8,6 +8,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatButtonModule } from '@angular/material/button';
 import { NavShellComponent } from './nav/nav-shell.component';
 import { RouterModule } from '@angular/router';
+import { MatRippleModule } from '@angular/material/core';
 
 const COMPONENTS = [NavShellComponent];
 
@@ -25,6 +26,6 @@ const IMPORTS = [
 @NgModule({
   declarations: [...COMPONENTS],
   exports: [...COMPONENTS],
-  imports: [...IMPORTS],
+  imports: [...IMPORTS, MatRippleModule],
 })
 export class ComponentsModule {}

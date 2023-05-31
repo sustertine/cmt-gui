@@ -1,17 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import { Period } from '../../../models';
 import {
   BusTestData,
   BusTestDataService,
-} from '../../../test-data/bus-test-data.service';
-import { ActivatedRoute, Router } from '@angular/router';
+} from '../../test-data/bus-test-data.service';
+import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-period-table',
-  styleUrls: ['./period-table.component.scss'],
-  templateUrl: './period-table.component.html',
+  selector: 'app-group-table',
+  templateUrl: './group-table.component.html',
+  styleUrls: ['./group-table.component.scss'],
 })
-export class PeriodTableComponent implements OnInit {
+export class GroupTableComponent implements OnInit {
   protected busses: Array<BusTestData> = [];
   protected displayedColumns: string[] = [
     'name',
@@ -19,7 +18,7 @@ export class PeriodTableComponent implements OnInit {
     'paxCount',
     'staffCount',
     'paxStaffCount',
-    'edit',
+    // 'edit',
   ];
 
   constructor(
@@ -57,6 +56,6 @@ export class PeriodTableComponent implements OnInit {
   }
 
   protected navigateToPeriod(element: any): void {
-    this.router.navigate(['/period', element.id]);
+    this.router.navigate(['group', '123']);
   }
 }
