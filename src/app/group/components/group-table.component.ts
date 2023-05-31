@@ -18,7 +18,6 @@ export class GroupTableComponent implements OnInit {
     'paxCount',
     'staffCount',
     'paxStaffCount',
-    // 'edit',
   ];
 
   constructor(

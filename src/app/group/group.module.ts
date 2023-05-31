@@ -7,8 +7,9 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTableModule } from '@angular/material/table';
 import { GroupViewComponent } from './views/group-view.component';
+import { HttpClientModule } from '@angular/common/http';
 
-const COMPONENTS = [GroupTableComponent];
+const COMPONENTS = [GroupTableComponent, GroupViewComponent];
 
 const MODULES = [
   CommonModule,
@@ -16,10 +17,11 @@ const MODULES = [
   MatIconModule,
   MatButtonModule,
   MatTableModule,
+  HttpClientModule,
 ];
 
 @NgModule({
-  declarations: [...COMPONENTS, GroupViewComponent],
+  declarations: [...COMPONENTS],
   imports: [...MODULES],
   exports: [GroupTableComponent],
 })
