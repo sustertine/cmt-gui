@@ -1,8 +1,9 @@
-import {Group} from "./group.model";
+import { Group } from './group.model';
 
 export interface Period {
-  name: string;
+  // name: string;
+  id: number;
   startDate: Date;
   endDate: Date;
-  groups: Array<Group>;
+  // groups: Array<Group>;
 }
