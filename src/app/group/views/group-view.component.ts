@@ -4,11 +4,6 @@ import { Observable } from 'rxjs';
 import { Period } from '../../models';
 import { HttpClient } from '@angular/common/http';
 
-type TesData = {
-  id: number;
-  name: string;
-};
-
 @Component({
   selector: 'app-group-view',
   templateUrl: './group-view.component.html',

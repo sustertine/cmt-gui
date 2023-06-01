@@ -8,9 +8,12 @@ import { MatListModule } from '@angular/material/list';
 import { MatButtonModule } from '@angular/material/button';
 import { NavShellComponent } from './nav/nav-shell.component';
 import { RouterModule } from '@angular/router';
-import { MatRippleModule } from '@angular/material/core';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { DateRangePickerComponent } from './inputs';
+import { MatNativeDateModule } from '@angular/material/core';
 
-const COMPONENTS = [NavShellComponent];
+const COMPONENTS = [NavShellComponent, DateRangePickerComponent];
 
 const IMPORTS = [
   CommonModule,
@@ -21,11 +24,14 @@ const IMPORTS = [
   MatIconModule,
   MatListModule,
   RouterModule,
+  MatFormFieldModule,
+  MatDatepickerModule,
+  MatNativeDateModule,
 ];
 
 @NgModule({
   declarations: [...COMPONENTS],
   exports: [...COMPONENTS],
-  imports: [...IMPORTS, MatRippleModule],
+  imports: [...IMPORTS],
 })
 export class ComponentsModule {}
