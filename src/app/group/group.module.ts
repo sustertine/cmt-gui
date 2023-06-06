@@ -8,6 +8,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatTableModule } from '@angular/material/table';
 import { GroupViewComponent } from './views/group-view.component';
 import { HttpClientModule } from '@angular/common/http';
+import {PassengerTableModule} from "../passenger/ui/passenger-table/passenger-table.module";
 
 const COMPONENTS = [GroupTableComponent, GroupViewComponent];
 
@@ -22,7 +23,7 @@ const MODULES = [
 
 @NgModule({
   declarations: [...COMPONENTS],
-  imports: [...MODULES],
+  imports: [...MODULES, PassengerTableModule],
   exports: [GroupTableComponent],
 })
 export class GroupModule {}
