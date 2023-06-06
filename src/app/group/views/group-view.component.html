@@ -1,15 +1,1 @@
 <p>group-view works!</p>
-<ng-container *ngIf="periods$| async as periods">
-    <table>
-        <th>Id</th>
-        <th>Start Date</th>
-        <th>End Date</th>
-    <ng-container *ngFor="let period of periods">
-        <tr>
-            <td>{{period.id}}</td>
-            <td>{{period.startDate | date: "dd. MM. yyyy"}}</td>
-            <td>{{period.endDate | date: "dd. MM. yyyy"}}</td>
-        </tr>
-    </ng-container>
-    </table>
-</ng-container>

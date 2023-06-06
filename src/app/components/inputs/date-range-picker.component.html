@@ -1,7 +1,7 @@
 <mat-form-field appearance="fill" color="accent">
     <mat-label>Vnesi datum termina</mat-label>
     <mat-date-range-input [rangePicker]="picker">
-        <input matStartDate placeholder="Začetni datum" ww">
+        <input matStartDate placeholder="Začetni datum">
         <input matEndDate placeholder="Končni datum" (dateChange)="setEndDate($event)">
     </mat-date-range-input>
     <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
