@@ -7,6 +7,7 @@ import { DashboardModule, DashboardRoutingModule } from './dashboard';
 import { PeriodModule } from './period/period.module';
 import { RouterOutlet } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 @NgModule({
   declarations: [AppComponent],
@@ -20,7 +21,7 @@ import { AppRoutingModule } from './app-routing.module';
     RouterOutlet,
     DashboardRoutingModule,
   ],
-  providers: [],
+  providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy }],
   bootstrap: [AppComponent],
   exports: [PeriodModule],
 })
