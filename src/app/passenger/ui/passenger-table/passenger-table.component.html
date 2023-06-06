@@ -1,0 +1,61 @@
+<h2>POTNIKI:</h2>
+<table mat-table [dataSource]="passengers" class="mat-elevation-z8">
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef>IME</th>
+        <td mat-cell *matCellDef="let element">{{element.name}}</td>
+<!--        <td mat-footer-cell *matFooterCellDef>SKUPAJ:</td>-->
+    </ng-container>
+
+    <ng-container matColumnDef="surname">
+        <th mat-header-cell *matHeaderCellDef>PRIIMEK</th>
+        <td mat-cell *matCellDef="let element">{{element.surname}}</td>
+<!--        <td mat-footer-cell *matFooterCellDef></td>-->
+    </ng-container>
+
+    <ng-container matColumnDef="birthDate">
+        <th mat-header-cell *matHeaderCellDef>ROJSTNI DATUM</th>
+        <td mat-cell *matCellDef="let element">{{element.birthDate }}</td>
+<!--        <td mat-footer-cell *matFooterCellDef>{{ getTotalPAXCount() }}</td>-->
+    </ng-container>
+
+    <ng-container matColumnDef="phoneNumber">
+        <th mat-header-cell *matHeaderCellDef>TELEFONSKA</th>
+        <td mat-cell *matCellDef="let element">{{ element.phoneNumber }}</td>
+<!--        <td mat-footer-cell *matFooterCellDef>{{ getTotalStaffCount()}}</td>-->
+    </ng-container>
+
+    <ng-container matColumnDef="parentPhoneNumber">
+        <th mat-header-cell *matHeaderCellDef>TELEFONSKA STARŠI</th>
+        <td mat-cell *matCellDef="let element">{{ element.parentPhoneNumber }}</td>
+<!--        <td mat-footer-cell *matFooterCellDef>{{ getTotalPAXStaffCount() }}</td>-->
+    </ng-container>
+
+    <ng-container matColumnDef="groupName">
+        <th mat-header-cell *matHeaderCellDef>GROUP</th>
+        <td mat-cell *matCellDef="let element">{{ element.groupName }}</td>
+        <!--        <td mat-footer-cell *matFooterCellDef>{{ getTotalPAXStaffCount() }}</td>-->
+    </ng-container>
+
+    <ng-container matColumnDef="travelGroup">
+        <th mat-header-cell *matHeaderCellDef>TRAVEL GROUP</th>
+        <td mat-cell *matCellDef="let element">{{ element.travelGroup }}</td>
+        <!--        <td mat-footer-cell *matFooterCellDef>{{ getTotalPAXStaffCount() }}</td>-->
+    </ng-container>
+
+
+    <!-- Edit Column -->
+    <ng-container matColumnDef="edit">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let element">
+            <button mat-icon-button (click)="edit(element)">
+                <mat-icon>edit</mat-icon>
+            </button>
+        </td>
+<!--        <td mat-footer-cell *matFooterCellDef></td>-->
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+<!--    <tr mat-footer-row *matFooterRowDef="displayedColumns"></tr>-->
+</table>
