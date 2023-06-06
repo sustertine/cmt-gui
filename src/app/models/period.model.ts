@@ -1,6 +1,6 @@
 export interface Period {
   id: number;
-  startDate: String;
-  endDate: String;
+  startDate: string;
+  endDate: string;
   groupIds: Array<number>;
 }

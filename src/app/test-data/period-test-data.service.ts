@@ -1,47 +1,45 @@
 import { Injectable } from '@angular/core';
-import { TestDataProvider } from "./test-data-provider";
-import { Period } from "../models";
+import { TestDataProvider } from './test-data-provider';
+import { Period } from '../models';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class PeriodTestDataService implements TestDataProvider<Period> {
-
-  constructor() { }
+  constructor() {}
 
   getTestData(): Array<Period> {
     return [
       {
-        name: "Termin 1",
-        startDate: new Date("2020-01-01"),
-        endDate: new Date("2020-01-31"),
-        groups: []
+        id: 1,
+        startDate: '2020-01-01',
+        endDate: '2020-01-31',
+        groupIds: [],
       },
       {
-        name: "Termin 2",
-        startDate: new Date("2020-02-01"),
-        endDate: new Date("2020-02-28"),
-        groups: []
+        id: 2,
+        startDate: '2020-02-01',
+        endDate: '2020-02-29',
+        groupIds: [],
       },
       {
-        name: "Termin 3",
-        startDate: new Date("2020-03-01"),
-        endDate: new Date("2020-03-31"),
-        groups: []
+        id: 3,
+        startDate: '2020-03-01',
+        endDate: '2020-03-31',
+        groupIds: [],
       },
       {
-        name: "Termin 4",
-        startDate: new Date("2020-04-01"),
-        endDate: new Date("2020-04-30"),
-        groups: []
+        id: 4,
+        startDate: '2020-04-01',
+        endDate: '2020-04-30',
+        groupIds: [],
       },
       {
-        name: "Termin 5",
-        startDate: new Date("2020-05-01"),
-        endDate: new Date("2020-05-31"),
-        groups: []
-      }
+        id: 5,
+        startDate: '2020-05-01',
+        endDate: '2020-05-31',
+        groupIds: [],
+      },
     ];
   }
-
 }
