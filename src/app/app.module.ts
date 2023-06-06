@@ -21,7 +21,7 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
     RouterOutlet,
     DashboardRoutingModule,
   ],
-  providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy }],
+  providers: [],
   bootstrap: [AppComponent],
   exports: [PeriodModule],
 })
