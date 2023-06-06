@@ -7,21 +7,23 @@ import { DashboardModule, DashboardRoutingModule } from './dashboard';
 import { PeriodModule } from './period/period.module';
 import { RouterOutlet } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
-import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { GroupModule } from './group';
+
+const MODULES = [
+  AppRoutingModule,
+  BrowserModule,
+  BrowserAnimationsModule,
+  ComponentsModule,
+  DashboardModule,
+  PeriodModule,
+  RouterOutlet,
+  DashboardRoutingModule,
+  GroupModule,
+];
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [
-    AppRoutingModule,
-    BrowserModule,
-    BrowserAnimationsModule,
-    ComponentsModule,
-    DashboardModule,
-    PeriodModule,
-    RouterOutlet,
-    DashboardRoutingModule,
-  ],
-  providers: [],
+  imports: [...MODULES],
   bootstrap: [AppComponent],
   exports: [PeriodModule],
 })
