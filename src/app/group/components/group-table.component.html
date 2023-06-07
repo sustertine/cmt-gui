@@ -1,5 +1,5 @@
 <h2>AVTOBUSI:</h2>
-<table mat-table [dataSource]="busses" class="mat-elevation-z8">
+<table mat-table [dataSource]="groups" class="mat-elevation-z8">
     <!-- Name Column -->
     <ng-container matColumnDef="name">
         <th mat-header-cell *matHeaderCellDef>BUS</th>
@@ -10,28 +10,28 @@
     <!-- Guide Column -->
     <ng-container matColumnDef="guide">
         <th mat-header-cell *matHeaderCellDef>VODNIK</th>
-        <td mat-cell *matCellDef="let element">{{element.guide}}</td>
+        <td mat-cell *matCellDef="let element">{{element.guideId}}</td>
         <td mat-footer-cell *matFooterCellDef></td>
     </ng-container>
 
     <!-- PAX Column -->
     <ng-container matColumnDef="paxCount">
         <th mat-header-cell *matHeaderCellDef>PAX</th>
-        <td mat-cell *matCellDef="let element">{{element.paxCount }}</td>
+        <td mat-cell *matCellDef="let element">{{element.passengerIds.length }}</td>
         <td mat-footer-cell *matFooterCellDef>{{ getTotalPAXCount() }}</td>
     </ng-container>
 
     <!-- Staff Column -->
     <ng-container matColumnDef="staffCount">
         <th mat-header-cell *matHeaderCellDef>STAFF</th>
-        <td mat-cell *matCellDef="let element">{{ element.staffCount }}</td>
+        <td mat-cell *matCellDef="let element">{{ element.staffIds.length }}</td>
         <td mat-footer-cell *matFooterCellDef>{{ getTotalStaffCount()}}</td>
     </ng-container>
 
     <!-- PAX + Staff Column -->
     <ng-container matColumnDef="paxStaffCount">
         <th mat-header-cell *matHeaderCellDef>PAX + STAFF</th>
-        <td mat-cell *matCellDef="let element">{{ element.paxStaffCount }}</td>
+        <td mat-cell *matCellDef="let element">{{ element.passengerIds.length + element.staffIds.length }}</td>
         <td mat-footer-cell *matFooterCellDef>{{ getTotalPAXStaffCount() }}</td>
     </ng-container>
 

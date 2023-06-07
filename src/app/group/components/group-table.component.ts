@@ -1,9 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import {
-  BusTestData,
-  BusTestDataService,
-} from '../../test-data/bus-test-data.service';
+import { Component, Input, OnInit } from '@angular/core';
+import { BusTestDataService } from '../../test-data/bus-test-data.service';
 import { Router } from '@angular/router';
+import { Group } from '../../models';
 
 @Component({
   selector: 'app-group-table',
@@ -11,7 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./group-table.component.scss'],
 })
 export class GroupTableComponent implements OnInit {
-  protected busses: Array<BusTestData> = [];
+  @Input() groups: Array<Group> = [];
   protected displayedColumns: string[] = [
     'name',
     'guide',
@@ -25,29 +23,21 @@ export class GroupTableComponent implements OnInit {
     private router: Router
   ) {}
 
-  ngOnInit(): void {
-    this.busses = this.busTestDataService
-      .getTestData()
-      .map((btd: BusTestData, index) => {
-        return {
-          ...btd,
-          id: index + 1,
-        };
-      });
-  }
+  ngOnInit(): void {}
 
   protected getTotalPAXCount(): number {
-    return this.busses.map((btd) => btd.paxCount).reduce((a, b) => a + b, 0);
+    return this.groups.reduce((a, b) => a + b.passengerIds.length, 0);
   }
 
   protected getTotalStaffCount(): number {
-    return this.busses.map((btd) => btd.staffCount).reduce((a, b) => a + b, 0);
+    return this.groups.reduce((a, b) => a + b.staffIds.length, 0);
   }
 
   protected getTotalPAXStaffCount(): number {
-    return this.busses
-      .map((btd) => btd.paxStaffCount)
-      .reduce((a, b) => a + b, 0);
+    return this.groups.reduce(
+      (a, b) => a + b.passengerIds.length + b.staffIds.length,
+      0
+    );
   }
 
   protected edit(element: any): void {

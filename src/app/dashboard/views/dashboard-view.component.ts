@@ -10,14 +10,20 @@ import { Group } from '../../models';
   styleUrls: ['./dashboard-view.component.scss'],
 })
 export class DashboardViewComponent implements OnInit {
-  protected latestPeriod$ = this.periodService.getLatestPeriod();
-  protected latestPeriodGroups$: Observable<Array<Group>> =
-    this.latestPeriod$.pipe(
-      map(({ groupIds }) =>
-        groupIds.map((id) => this.groupService.getGroupById(id))
-      ),
-      mergeMap((groupObservables) => combineLatest(groupObservables))
-    );
+  protected latestPeriod$ = this.periodService.getLatestPeriod().pipe(
+    map((period) => {
+      if (period.groupIds) {
+        const groupObservables = period.groupIds.map((groupId) =>
+          this.groupService.getGroupById(groupId)
+        );
+
+        this.latestPeriodGroups$ = combineLatest(groupObservables);
+      }
+      return period;
+    })
+  );
+
+  protected latestPeriodGroups$?: Observable<Array<Group>>;
 
   ngOnInit() {}
 
