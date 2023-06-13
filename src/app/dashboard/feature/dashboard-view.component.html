@@ -1,9 +1,7 @@
-<div class="grid-container">
-    <ng-container *ngIf="latestPeriod$ | async as latestPeriod">
-        <h2>ID: {{ latestPeriod.id }} Start: {{ latestPeriod.startDate }} End: {{ latestPeriod.endDate }}</h2>
-    </ng-container>
-    <ng-container *ngIf="latestPeriodGroups$ | async as groups">
-        <app-group-table [groups]="groups"></app-group-table>
-    </ng-container>
-</div>
+<ng-container *ngIf="latestPeriodGroups$ | async as groups">
+    <app-group-table [groups]="groups"></app-group-table>
+</ng-container>
 
+<ng-container *ngIf="latestPeriod$ | async as latestPeriod">
+    <h2>ID: {{ latestPeriod.id }} Start: {{ latestPeriod.startDate }} End: {{ latestPeriod.endDate }}</h2>
+</ng-container>

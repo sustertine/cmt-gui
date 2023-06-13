@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { PeriodService } from '../../period/data-access';
-import { combineLatest, map, mergeMap, Observable } from 'rxjs';
+import { combineLatest, map, Observable } from 'rxjs';
 import { Group } from '../../models';
 import { GroupService } from '../../data-access/group.service';
+import { PeriodService } from '../../data-access/period.service';
 
 @Component({
   selector: 'app-dashboard-view',

@@ -3,9 +3,9 @@ import { CommonModule } from '@angular/common';
 
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { DashboardViewComponent } from './dashboard-view.component';
-import { PeriodModule } from '../../period';
 import { GroupModule } from '../../group';
 import { ComponentsModule } from '../../components';
+import { MatGridListModule } from '@angular/material/grid-list';
 
 const COMPONENTS = [DashboardViewComponent];
 
@@ -15,9 +15,9 @@ const COMPONENTS = [DashboardViewComponent];
   imports: [
     CommonModule,
     DashboardRoutingModule,
-    PeriodModule,
     GroupModule,
     ComponentsModule,
+    MatGridListModule,
   ],
 })
 export class DashboardModule {}

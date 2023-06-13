@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ComponentsModule } from './components';
-import { PeriodModule } from './period/period.module';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { DashboardModule } from './dashboard/feature/dashboard.module';
@@ -16,7 +15,6 @@ const MODULES = [
   BrowserAnimationsModule,
   ComponentsModule,
   DashboardModule,
-  PeriodModule,
   RouterModule,
   DashboardRoutingModule,
   GroupModule,
