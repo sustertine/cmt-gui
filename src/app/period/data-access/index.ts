@@ -1,1 +1,1 @@
-export * from './period.service';
+export * from '../../data-access/period.service';

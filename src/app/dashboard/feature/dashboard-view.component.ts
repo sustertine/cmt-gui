@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { PeriodService } from '../../period/data-access';
 import { combineLatest, map, mergeMap, Observable } from 'rxjs';
-import { GroupService } from '../../group/data-access';
 import { Group } from '../../models';
+import { GroupService } from '../../data-access/group.service';
 
 @Component({
   selector: 'app-dashboard-view',
@@ -10,11 +10,11 @@ import { Group } from '../../models';
   styleUrls: ['./dashboard-view.component.scss'],
 })
 export class DashboardViewComponent implements OnInit {
-  protected latestPeriod$ = this.periodService.getLatestPeriod().pipe(
+  protected latestPeriod$ = this.periodService.findLatestPeriod().pipe(
     map((period) => {
       if (period.groupIds) {
         const groupObservables = period.groupIds.map((groupId) =>
-          this.groupService.getGroupById(groupId)
+          this.groupService.findGroupById(groupId)
         );
 
         this.latestPeriodGroups$ = combineLatest(groupObservables);

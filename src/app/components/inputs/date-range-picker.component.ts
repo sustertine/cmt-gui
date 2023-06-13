@@ -9,8 +9,8 @@ import { MatDatepickerInputEvent } from '@angular/material/datepicker';
 export class DateRangePickerComponent implements OnInit {
   @Output() dateRangeChanged = new EventEmitter<Date[]>();
 
-  startDate!: Date | null;
-  endDate!: Date | null;
+  startDate?: Date | null;
+  endDate?: Date | null;
 
   ngOnInit() {}
 

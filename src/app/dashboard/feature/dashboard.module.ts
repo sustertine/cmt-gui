@@ -2,10 +2,10 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { DashboardRoutingModule } from './dashboard-routing.module';
-import { DashboardViewComponent } from './views/dashboard-view.component';
-import { PeriodModule } from '../period';
-import { GroupModule } from '../group';
-import { ComponentsModule } from '../components';
+import { DashboardViewComponent } from './dashboard-view.component';
+import { PeriodModule } from '../../period';
+import { GroupModule } from '../../group';
+import { ComponentsModule } from '../../components';
 
 const COMPONENTS = [DashboardViewComponent];
 

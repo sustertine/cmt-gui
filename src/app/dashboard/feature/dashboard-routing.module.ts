@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { DashboardViewComponent } from './views';
+import { DashboardViewComponent } from './dashboard-view.component';
 
 const routes: Routes = [
   {
