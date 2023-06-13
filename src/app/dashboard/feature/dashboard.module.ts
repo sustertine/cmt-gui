@@ -6,6 +6,7 @@ import { DashboardViewComponent } from './dashboard-view.component';
 import { GroupModule } from '../../group';
 import { ComponentsModule } from '../../components';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { PeriodInfoModule } from '../../period/ui/period-info/period-info.module';
 
 const COMPONENTS = [DashboardViewComponent];
 
@@ -18,6 +19,7 @@ const COMPONENTS = [DashboardViewComponent];
     GroupModule,
     ComponentsModule,
     MatGridListModule,
+    PeriodInfoModule,
   ],
 })
 export class DashboardModule {}

@@ -1,3 +1,12 @@
-<mat-card>
-    <mat-card-content>Simple card</mat-card-content>
-</mat-card>
+<ng-container *ngIf="period">
+    <mat-card  class="mat-elevation-z8">
+        <mat-card-header >
+            <mat-card-title>TERMIN</mat-card-title>
+        </mat-card-header>
+        <mat-divider class="card-divider"></mat-divider>
+        <mat-card-content>
+            <h3> <b>OD: </b>{{ period.startDate }}</h3>
+            <h3> <b>DO: </b>{{ period.endDate }}</h3>
+        </mat-card-content>
+    </mat-card>
+</ng-container>

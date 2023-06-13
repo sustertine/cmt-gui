@@ -1,5 +1,4 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { BusTestDataService } from '../../test-data/bus-test-data.service';
 import { Router } from '@angular/router';
 import { Group } from '../../models';
 
@@ -18,10 +17,7 @@ export class GroupTableComponent implements OnInit {
     'paxStaffCount',
   ];
 
-  constructor(
-    private busTestDataService: BusTestDataService,
-    private router: Router
-  ) {}
+  constructor(private router: Router) {}
 
   ngOnInit(): void {}
 
