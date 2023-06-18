@@ -10,10 +10,10 @@ import { NavShellComponent } from './nav/nav-shell.component';
 import { RouterModule } from '@angular/router';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDatepickerModule } from '@angular/material/datepicker';
-import { DateRangePickerComponent } from './inputs';
 import { MatNativeDateModule } from '@angular/material/core';
+import { MatMenuModule } from '@angular/material/menu';
 
-const COMPONENTS = [NavShellComponent, DateRangePickerComponent];
+const COMPONENTS = [NavShellComponent];
 
 const IMPORTS = [
   CommonModule,
@@ -32,6 +32,6 @@ const IMPORTS = [
 @NgModule({
   declarations: [...COMPONENTS],
   exports: [...COMPONENTS],
-  imports: [...IMPORTS],
+  imports: [...IMPORTS, MatMenuModule],
 })
 export class ComponentsModule {}

@@ -8,6 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { DashboardModule } from './dashboard/feature/dashboard.module';
 import { DashboardRoutingModule } from './dashboard/feature/dashboard-routing.module';
 import { GroupModule } from './group';
+import { LayoutModule } from './ui/layout/layout.module';
 
 const MODULES = [
   AppRoutingModule,
@@ -22,7 +23,7 @@ const MODULES = [
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [...MODULES],
+  imports: [...MODULES, LayoutModule],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

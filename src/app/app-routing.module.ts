@@ -20,6 +20,13 @@ const routes: Routes = [
     loadChildren: () =>
       import('./group/group.module').then((m) => m.GroupModule),
   },
+  {
+    path: 'period',
+    loadChildren: () =>
+      import('./period/feature/period-shell/period-shell.module').then(
+        (m) => m.PeriodShellModule
+      ),
+  },
 ];
 
 @NgModule({

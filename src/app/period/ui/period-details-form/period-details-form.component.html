@@ -1,0 +1,31 @@
+<form [formGroup]="periodDetailsForm">
+    <div class="row">
+        <div class="col">
+            <mat-form-field appearance="outline">
+                <mat-label>Ime termina</mat-label>
+                <input formControlName="name" matInput/>
+            </mat-form-field>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <mat-form-field appearance="outline">
+                <mat-label>Začetek termina</mat-label>
+                <input formControlName="startDate" matInput/>
+            </mat-form-field>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <mat-form-field appearance="outline">
+                <mat-label>Konec termina</mat-label>
+                <input formControlName="endDate" matInput/>
+            </mat-form-field>
+        </div>
+    </div>
+
+</form>
+
+<div>
+    <button mat-button matStepperNext color="primary" (click)="printFormValue()">Nadaljuj</button>
+</div>

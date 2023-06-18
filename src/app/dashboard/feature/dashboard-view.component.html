@@ -1,12 +1,14 @@
-<div class="container-fluid">
+<app-page-header icon="dashboard" title="Domov">
+</app-page-header>
+<div class="container-fluid px-3">
     <div class="row">
-        <div class="col-lg-3 col-md-3 col-sm-12">
+        <div class="col-lg-3 col-md-3 col-sm-12 my-1">
             <ng-container *ngIf="latestPeriod$ | async as latestPeriod">
                 <app-period-info [period]="latestPeriod">
                 </app-period-info>
             </ng-container>
         </div>
-        <div class="col-lg-9 col-md-9 col-sm-12 mb-3">
+        <div class="col-lg-9 col-md-9 col-sm-12 mb-3 my-1">
             <ng-container *ngIf="latestPeriodGroups$ | async as groups">
                 <app-group-table [groups]="groups"></app-group-table>
             </ng-container>

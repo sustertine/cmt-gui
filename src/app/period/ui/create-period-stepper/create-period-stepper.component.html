@@ -1,0 +1,9 @@
+<mat-stepper #stepper>
+    <mat-step label="Osnovni podatki">
+        <app-period-details-form></app-period-details-form>
+    </mat-step>
+    <mat-step label="Avtobusi">
+        <button mat-button matStepperPrevious>Nazaj</button>
+        <button mat-button matStepperNext color="primary">Zaključi</button>
+    </mat-step>
+</mat-stepper>

@@ -1,0 +1,19 @@
+<app-page-header icon="calendar_today" title="Termini">
+    <button
+            routerLink="create"
+            mat-flat-button
+            color="primary"
+            class="action">
+        <mat-icon class="mr-2">add</mat-icon>
+        <span>Dodaj termin</span>
+    </button>
+</app-page-header>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-4">
+            <ng-container *ngIf="periods$ | async as periods">
+                <app-period-table [periods]="periods"></app-period-table>
+            </ng-container>
+        </div>
+    </div>
+</div>

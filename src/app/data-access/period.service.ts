@@ -12,6 +12,13 @@ export class PeriodService {
   /**
    * Find all periods.
    */
+  public findAllPeriods(): Observable<Array<Period>> {
+    return this.http.get<Array<Period>>('http://localhost:8080/api/v1/period');
+  }
+
+  /**
+   * Find latest periods.
+   */
   public findLatestPeriod(): Observable<Period> {
     return this.http.get<Period>('http://localhost:8080/api/v1/period/latest');
   }
