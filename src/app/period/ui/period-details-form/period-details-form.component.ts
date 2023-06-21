@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-period-details-form',
@@ -7,7 +7,7 @@ import { FormBuilder } from '@angular/forms';
   styleUrls: ['./period-details-form.component.scss'],
 })
 export class PeriodDetailsFormComponent {
-  periodDetailsForm = this.formBuilder.group({
+  formGroup = this.formBuilder.group({
     name: [''],
     startDate: [''],
     endDate: [''],
@@ -15,7 +15,7 @@ export class PeriodDetailsFormComponent {
 
   constructor(private formBuilder: FormBuilder) {}
 
-  public printFormValue() {
-    console.log(this.periodDetailsForm.value);
+  public getFormGroup(): FormGroup {
+    return this.formGroup;
   }
 }

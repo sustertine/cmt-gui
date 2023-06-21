@@ -1,31 +1,32 @@
-<form [formGroup]="periodDetailsForm">
+<form [formGroup]="formGroup">
     <div class="row">
         <div class="col">
             <mat-form-field appearance="outline">
                 <mat-label>Ime termina</mat-label>
-                <input formControlName="name" matInput/>
+                <input matInput required formControlName="name"/>
             </mat-form-field>
         </div>
     </div>
     <div class="row">
         <div class="col">
             <mat-form-field appearance="outline">
-                <mat-label>Začetek termina</mat-label>
-                <input formControlName="startDate" matInput/>
+                <mat-label>Začetek</mat-label>
+                <input matInput required formControlName="startDate" [matDatepicker]="startDatePicker">
+                <mat-datepicker-toggle matIconSuffix [for]="startDatePicker"></mat-datepicker-toggle>
+                <mat-datepicker #startDatePicker></mat-datepicker>
             </mat-form-field>
         </div>
     </div>
     <div class="row">
         <div class="col">
             <mat-form-field appearance="outline">
-                <mat-label>Konec termina</mat-label>
-                <input formControlName="endDate" matInput/>
+                <mat-label>Konec</mat-label>
+                <input matInput required formControlName="endDate" [matDatepicker]="endDatePicker">
+                <mat-datepicker-toggle matIconSuffix [for]="endDatePicker"></mat-datepicker-toggle>
+                <mat-datepicker #endDatePicker></mat-datepicker>
             </mat-form-field>
         </div>
     </div>
 
 </form>
 
-<div>
-    <button mat-button matStepperNext color="primary" (click)="printFormValue()">Nadaljuj</button>
-</div>

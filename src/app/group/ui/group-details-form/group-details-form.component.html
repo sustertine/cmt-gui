@@ -1,0 +1,16 @@
+<form [formGroup]="formGroup">
+    <div class="row">
+        <div class="col py-2">
+            <mat-form-field appearance="outline">
+                <mat-label>Vodnik</mat-label>
+                <mat-select formControlName="guideSelect">
+                    <mat-option *ngFor="let guide of guides" [value]="guide.id">
+                        {{ guide.name + ' ' + guide.surname }}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div class="col">
+        </div>
+    </div>
+</form>

@@ -1,8 +1,15 @@
-<mat-stepper #stepper>
+<mat-stepper #stepper linear>
+    <!--    <mat-step label="Osnovni podatki" [stepControl]="detailsFormGroup">-->
     <mat-step label="Osnovni podatki">
-        <app-period-details-form></app-period-details-form>
+        <app-period-details-form #detailsForm></app-period-details-form>
+        <div>
+            <button mat-button matStepperNext color="primary">Nadaljuj</button>
+        </div>
     </mat-step>
     <mat-step label="Avtobusi">
+        <ng-container *ngIf="guides$ | async as guides">
+            <app-group-details-form [guides]="guides"></app-group-details-form>
+        </ng-container>
         <button mat-button matStepperPrevious>Nazaj</button>
         <button mat-button matStepperNext color="primary">Zaključi</button>
     </mat-step>

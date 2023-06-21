@@ -6,6 +6,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { ReactiveFormsModule } from '@angular/forms';
 import { PeriodDetailsFormModule } from '../period-details-form/period-details-form.module';
 import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+import { GroupDetailsFormModule } from '../../../group/ui/group-details-form/group-details-form.module';
 
 @NgModule({
   declarations: [CreatePeriodStepperComponent],
@@ -17,6 +19,8 @@ import { MatButtonModule } from '@angular/material/button';
     ReactiveFormsModule,
     PeriodDetailsFormModule,
     MatButtonModule,
+    MatInputModule,
+    GroupDetailsFormModule,
   ],
 })
 export class CreatePeriodStepperModule {}
