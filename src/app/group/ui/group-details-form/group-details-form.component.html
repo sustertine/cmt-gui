@@ -1,16 +1,31 @@
 <form [formGroup]="formGroup">
     <div class="row">
-        <div class="col py-2">
+        <div class="col-3"></div>
+        <div class="col">
+            <button mat-button color="primary" (click)="addStaffFormGroup()">Dodaj staff</button>
+        </div>
+        <div class="col"></div>
+    </div>
+    <div class="row">
+        <div class="col-3">
             <mat-form-field appearance="outline">
                 <mat-label>Vodnik</mat-label>
                 <mat-select formControlName="guideSelect">
-                    <mat-option *ngFor="let guide of guides" [value]="guide.id">
+                    <mat-option *ngFor="let guide of guideOptions" [value]="guide.id">
                         {{ guide.name + ' ' + guide.surname }}
                     </mat-option>
                 </mat-select>
             </mat-form-field>
         </div>
         <div class="col">
+            <ng-container formArrayName="staffNames">
+                <div class="col" *ngFor="let control of nameControls; let i = index">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Ime</mat-label>
+                        <input matInput required [formControlName]="i.toString()"/>
+                    </mat-form-field>
+                </div>
+            </ng-container>
         </div>
     </div>
 </form>

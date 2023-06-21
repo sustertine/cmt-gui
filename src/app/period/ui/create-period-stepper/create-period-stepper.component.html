@@ -8,7 +8,7 @@
     </mat-step>
     <mat-step label="Avtobusi">
         <ng-container *ngIf="guides$ | async as guides">
-            <app-group-details-form [guides]="guides"></app-group-details-form>
+            <app-group-details-form [guideOptions]="guides"></app-group-details-form>
         </ng-container>
         <button mat-button matStepperPrevious>Nazaj</button>
         <button mat-button matStepperNext color="primary">Zaključi</button>
