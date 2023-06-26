@@ -79,7 +79,7 @@
                     </div>
                 </div>
                 <div class="row my-3">
-                    <app-file-upload></app-file-upload>
+                    <app-file-upload (fileSelected)="postFile($event)"></app-file-upload>
                 </div>
             </div>
         </div>

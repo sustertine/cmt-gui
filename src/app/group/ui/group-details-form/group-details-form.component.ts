@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Guide } from '../../../models';
+import { FileUploadService } from '../../../data-access/file-upload.service';
 
 @Component({
   selector: 'app-group-details-form',
@@ -16,7 +17,10 @@ export class GroupDetailsFormComponent implements OnInit {
     packages: this.formBuilder.array([]),
   });
 
-  constructor(private formBuilder: FormBuilder) {}
+  constructor(
+    private formBuilder: FormBuilder,
+    private fileUploadService: FileUploadService
+  ) {}
 
   ngOnInit(): void {}
 
@@ -44,5 +48,12 @@ export class GroupDetailsFormComponent implements OnInit {
       surname: ['', Validators.required],
       phoneNumber: ['', [Validators.required]],
     });
+  }
+
+  postFile(file: any): void {
+    this.fileUploadService.parsePassengerCSV(file).subscribe((response) => {
+      console.log(response);
+    });
+    // console.log(file);
   }
 }

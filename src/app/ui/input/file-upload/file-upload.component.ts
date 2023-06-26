@@ -6,12 +6,19 @@ import { Component, EventEmitter, Output } from '@angular/core';
   styleUrls: ['./file-upload.component.scss'],
 })
 export class FileUploadComponent {
-  @Output() public file = new EventEmitter<any>();
+  @Output() public fileSelected = new EventEmitter<any>();
 
   private selectedFile?: any;
 
   public setSelectedFile(event: any): void {
-    this.selectedFile = event.target.files[0];
-    console.log(this.selectedFile);
+    if (event.target.files.length > 0) {
+      const file = event.target.files[0];
+      const formData = new FormData();
+      formData.append('file', file);
+
+      this.selectedFile = formData;
+
+      this.fileSelected.emit(this.selectedFile);
+    }
   }
 }
