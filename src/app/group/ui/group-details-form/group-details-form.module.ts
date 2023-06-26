@@ -6,6 +6,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
+import { MatIconModule } from '@angular/material/icon';
+import { FileUploadModule } from '../../../ui/input/file-upload/file-upload.module';
 
 @NgModule({
   declarations: [GroupDetailsFormComponent],
@@ -15,7 +17,9 @@ import { MatInputModule } from '@angular/material/input';
     MatFormFieldModule,
     MatSelectModule,
     MatButtonModule,
+    MatIconModule,
     MatInputModule,
+    FileUploadModule,
   ],
   exports: [GroupDetailsFormComponent],
 })

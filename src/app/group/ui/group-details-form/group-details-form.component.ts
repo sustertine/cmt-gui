@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Guide } from '../../../models';
 
@@ -7,34 +7,42 @@ import { Guide } from '../../../models';
   templateUrl: './group-details-form.component.html',
   styleUrls: ['./group-details-form.component.scss'],
 })
-export class GroupDetailsFormComponent {
+export class GroupDetailsFormComponent implements OnInit {
   @Input() guideOptions = new Array<Guide>();
 
   formGroup = this.formBuilder.group({
     guideSelect: [''],
-    staffNames: this.formBuilder.array([]),
-    staffSurnames: this.formBuilder.array([]),
-    staffPhoneNumbers: this.formBuilder.array([]),
+    staff: this.formBuilder.array([this.createStaffFormGroup()]),
+    packages: this.formBuilder.array([]),
   });
 
   constructor(private formBuilder: FormBuilder) {}
 
-  protected addStaffFormGroup(): void {
-    const nameControl = this.formBuilder.control('', Validators.required);
-    const surnameControl = this.formBuilder.control('', Validators.required);
-    const phoneNumberControl = this.formBuilder.control(
-      '',
-      Validators.required
-    );
+  ngOnInit(): void {}
 
-    (this.formGroup.get('staffNames') as FormArray).push(nameControl);
-    (this.formGroup.get('staffSurnames') as FormArray).push(surnameControl);
-    (this.formGroup.get('staffPhoneNumbers') as FormArray).push(
-      phoneNumberControl
-    );
+  protected get staffFormArrayGroups() {
+    return (this.formGroup.get('staff') as FormArray).controls;
   }
 
-  protected get nameControls() {
-    return (this.formGroup.get('staffNames') as FormArray).controls;
+  protected addStaffFormGroup(): void {
+    const staff = this.formGroup.get('staff') as FormArray;
+    staff.push(this.createStaffFormGroup());
+  }
+
+  protected removeStaffFormGroup(index: number): void {
+    const staff = this.formGroup.get('staff') as FormArray;
+    if (staff.length > 1) {
+      staff.removeAt(index);
+    } else {
+      staff.reset();
+    }
+  }
+
+  private createStaffFormGroup(): FormGroup {
+    return this.formBuilder.group({
+      name: ['', Validators.required],
+      surname: ['', Validators.required],
+      phoneNumber: ['', [Validators.required]],
+    });
   }
 }
